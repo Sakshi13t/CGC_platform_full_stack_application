@@ -1,0 +1,3 @@
+train_id,unit,service,oem,driver,num_stages,design_speed_rpm,min_gov_speed_rpm,trip_speed_rpm,design_flow_tph,design_suct_bara,design_disch_bara,design_poly_eff_pct,gas_k_cp_cv,install_date,surge_control_line_pct
+CGC-100A,Ethylene Unit 100,Cracked Gas Compressor,TurboMax,Extraction-condensing steam turbine,5,10600,7419,11766,255.0,1.32,36.5,81.5,1.2,2016-05-01,112.0
+CGC-200B,Ethylene Unit 200,Cracked Gas Compressor,TurboMax,Extraction-condensing steam turbine,5,10850,7594,12043,240.0,1.28,37.2,80.5,1.2,2018-09-01,112.0

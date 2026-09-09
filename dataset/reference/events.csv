@@ -1,0 +1,23 @@
+train_id,ts_start,ts_end,event_type,severity,detail
+CGC-100A,2024-04-21 14:00:00,2024-04-21 22:00:00,online_wash,planned,"Online wash, efficiency recovery ~73%"
+CGC-100A,2024-07-14 00:00:00,2024-07-14 03:00:00,surge,critical,Anti-surge excursion during feed upset
+CGC-100A,2024-07-14 05:00:00,2024-07-14 08:00:00,surge,critical,Anti-surge excursion during feed upset
+CGC-100A,2024-07-14 10:00:00,2024-07-14 13:00:00,surge,critical,Anti-surge excursion during feed upset
+CGC-100A,2024-07-14 15:00:00,2024-07-14 18:00:00,surge,critical,Anti-surge excursion during feed upset
+CGC-100A,2024-08-19 21:00:00,2024-08-20 05:00:00,online_wash,planned,"Online wash, efficiency recovery ~72%"
+CGC-100A,2024-10-27 00:00:00,2024-12-25 23:00:00,sensor_fault,warning,Stage-3 discharge TT calibration drift (+0..9 C)
+CGC-100A,2024-12-06 20:00:00,2024-12-07 04:00:00,online_wash,planned,"Online wash, efficiency recovery ~79%"
+CGC-100A,2025-03-27 19:00:00,2025-03-28 03:00:00,online_wash,planned,"Online wash, efficiency recovery ~81%"
+CGC-100A,2025-04-15 00:00:00,2025-06-03 23:00:00,process_upset,warning,Interstage cooler fouling; elevated stage temps
+CGC-100A,2025-07-27 16:00:00,2025-07-28 00:00:00,online_wash,planned,"Online wash, efficiency recovery ~75%"
+CGC-100A,2025-11-20 22:00:00,2025-11-21 06:00:00,online_wash,planned,"Online wash, efficiency recovery ~87%"
+CGC-200B,2024-04-16 00:00:00,2024-04-16 08:00:00,online_wash,planned,"Online wash, efficiency recovery ~75%"
+CGC-200B,2024-04-30 00:00:00,2024-05-17 23:00:00,sensor_fault,warning,Suction flow transmitter stuck (frozen value)
+CGC-200B,2024-08-02 01:00:00,2024-08-02 09:00:00,online_wash,planned,"Online wash, efficiency recovery ~84%"
+CGC-200B,2024-11-08 08:00:00,2024-11-08 16:00:00,online_wash,planned,"Online wash, efficiency recovery ~76%"
+CGC-200B,2025-02-19 13:00:00,2025-02-19 21:00:00,online_wash,planned,"Online wash, efficiency recovery ~73%"
+CGC-200B,2025-06-09 21:00:00,2025-06-10 05:00:00,online_wash,planned,"Online wash, efficiency recovery ~74%"
+CGC-200B,2025-06-29 00:00:00,2025-08-12 23:00:00,degradation,warning,Drive-end bearing wear; rising 1x vibration
+CGC-200B,2025-08-13 00:00:00,2025-08-13 02:00:00,trip,critical,High-vibration trip on drive-end bearing
+CGC-200B,2025-08-13 00:00:00,2025-08-18 23:00:00,unscheduled_maintenance,critical,Bearing replacement; train down 6 days
+CGC-200B,2025-09-26 10:00:00,2025-09-26 18:00:00,online_wash,planned,"Online wash, efficiency recovery ~82%"
