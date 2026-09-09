@@ -25,17 +25,27 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 # Paths (no hard-coded absolute paths — resolved relative to the repo root)
 # ---------------------------------------------------------------------------
+# REPO_ROOT here means "this phase's working directory" (cgc_platform_phase/
+# phase2) — outputs/ stays anchored here. The raw dataset, however, lives at
+# the true git-repo root under dataset/ (added after the initial Phase 2
+# handoff), not under phase2/data/ as originally assumed. PROJECT_ROOT points
+# there explicitly so the mismatch is visible rather than silently patched.
 REPO_ROOT = Path(__file__).resolve().parents[3]
-DATA_TIMESERIES_DIR = REPO_ROOT / "data" / "timeseries"
-DATA_REFERENCE_DIR = REPO_ROOT / "data" / "reference"
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
+DATA_TIMESERIES_DIR = PROJECT_ROOT / "dataset" / "timeseries"
+DATA_REFERENCE_DIR = PROJECT_ROOT / "dataset" / "reference"
 OUTPUTS_DIR = REPO_ROOT / "outputs"
 PROCESSED_DIR = OUTPUTS_DIR / "processed"
 DIAGNOSTICS_DIR = OUTPUTS_DIR / "diagnostics"
 
 TELEMETRY_CSV = DATA_TIMESERIES_DIR / "compressor_telemetry.csv"
-GROUND_TRUTH_CSV = DATA_REFERENCE_DIR / "ground_truth_reference.csv"
+# ground_truth_reference.csv was added under dataset/timeseries/, not
+# dataset/reference/ — path reflects the actual file location, not the name.
+GROUND_TRUTH_CSV = DATA_TIMESERIES_DIR / "ground_truth_reference.csv"
 EVENTS_CSV = DATA_REFERENCE_DIR / "events.csv"
 ASSETS_CSV = DATA_REFERENCE_DIR / "assets.csv"
+COMPRESSOR_CURVES_CSV = DATA_REFERENCE_DIR / "compressor_curves.csv"
+FEED_SLATE_CSV = DATA_REFERENCE_DIR / "feed_slate_daily.csv"
 
 TRAIN_IDS = ("CGC-100A", "CGC-200B")
 

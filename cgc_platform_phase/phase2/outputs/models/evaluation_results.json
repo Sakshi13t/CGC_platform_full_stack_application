@@ -1,0 +1,323 @@
+{
+  "metadata": {
+    "target": "sec_true_t_plus_24h",
+    "target_source_column": "specific_energy_kwh_per_t_true",
+    "forecast_horizon_hours": 24,
+    "feature_columns": [
+      "gas_mw",
+      "diene_ppm",
+      "ambient_temp_c",
+      "cw_supply_temp_c",
+      "throughput_tph",
+      "speed_rpm",
+      "shaft_power_kw",
+      "surge_margin_pct",
+      "recycle_valve_pct",
+      "wash_oil_rate_kgph",
+      "antifoulant_ppm",
+      "run_hours_since_wash",
+      "vib_de_um",
+      "vib_nde_um",
+      "vib_axial_um",
+      "brg_de_temp_c",
+      "brg_nde_temp_c",
+      "brg_thrust_temp_c",
+      "lube_oil_press_bar",
+      "lube_oil_temp_c",
+      "seal_gas_dp_bar",
+      "p_s1_disch_bara",
+      "t_s1_suct_c",
+      "t_s1_disch_c",
+      "p_s2_disch_bara",
+      "t_s2_suct_c",
+      "t_s2_disch_c",
+      "p_s3_disch_bara",
+      "t_s3_suct_c",
+      "t_s3_disch_c",
+      "p_s4_disch_bara",
+      "t_s4_suct_c",
+      "t_s4_disch_c",
+      "p_s5_disch_bara",
+      "t_s5_suct_c",
+      "t_s5_disch_c",
+      "p_s2_suct_bara",
+      "p_s3_suct_bara",
+      "p_s4_suct_bara",
+      "p_s5_suct_bara",
+      "pressure_ratio_s1",
+      "polytropic_eff_observed_s1",
+      "discharge_temp_residual_c_s1",
+      "polytropic_head_jkg_s1",
+      "pressure_ratio_s2",
+      "polytropic_eff_observed_s2",
+      "discharge_temp_residual_c_s2",
+      "polytropic_head_jkg_s2",
+      "pressure_ratio_s3",
+      "polytropic_eff_observed_s3",
+      "discharge_temp_residual_c_s3",
+      "polytropic_head_jkg_s3",
+      "pressure_ratio_s4",
+      "polytropic_eff_observed_s4",
+      "discharge_temp_residual_c_s4",
+      "polytropic_head_jkg_s4",
+      "pressure_ratio_s5",
+      "polytropic_eff_observed_s5",
+      "discharge_temp_residual_c_s5",
+      "polytropic_head_jkg_s5",
+      "overall_pressure_ratio",
+      "sec_kwh_per_t",
+      "below_min_surge_margin",
+      "vib_de_um_rate_1h",
+      "vib_de_um_roll_mean_24h",
+      "vib_de_um_roll_std_24h",
+      "vib_de_um_roll_mean_168h",
+      "vib_de_um_roll_std_168h",
+      "brg_de_temp_c_rate_1h",
+      "brg_de_temp_c_roll_mean_24h",
+      "brg_de_temp_c_roll_std_24h",
+      "brg_de_temp_c_roll_mean_168h",
+      "brg_de_temp_c_roll_std_168h",
+      "surge_margin_pct_rate_1h",
+      "surge_margin_pct_roll_mean_24h",
+      "surge_margin_pct_roll_std_24h",
+      "surge_margin_pct_roll_mean_168h",
+      "surge_margin_pct_roll_std_168h",
+      "run_hours_since_wash_rate_1h",
+      "run_hours_since_wash_roll_mean_24h",
+      "run_hours_since_wash_roll_std_24h",
+      "run_hours_since_wash_roll_mean_168h",
+      "run_hours_since_wash_roll_std_168h",
+      "feed_mode_ethane",
+      "feed_mode_mixed",
+      "feed_mode_naphtha",
+      "stage1_physics_quality_GOOD",
+      "stage1_physics_quality_SHUTDOWN",
+      "stage2_physics_quality_GOOD",
+      "stage2_physics_quality_SHUTDOWN",
+      "stage3_physics_quality_BAD_SENSOR",
+      "stage3_physics_quality_GOOD",
+      "stage3_physics_quality_SHUTDOWN",
+      "stage4_physics_quality_GOOD",
+      "stage4_physics_quality_SHUTDOWN",
+      "stage5_physics_quality_GOOD",
+      "stage5_physics_quality_SHUTDOWN",
+      "sec_quality_BAD_SENSOR",
+      "sec_quality_GOOD",
+      "sec_quality_SHUTDOWN"
+    ],
+    "n_features": 100,
+    "rows_total_telemetry": 35040,
+    "rows_after_shutdown_drop": 34896,
+    "rows_after_target_dropna": 34824,
+    "n_train": 26256,
+    "n_validation": 4248,
+    "n_test": 4320,
+    "naive_baseline_definition": "current measured (noisy) sec_kwh_per_t physics feature at time t, used unchanged as the forecast for specific_energy_kwh_per_t_true at t+H (persistence assumption: 'tomorrow looks like today')."
+  },
+  "naive": {
+    "validation": {
+      "mae": 1.486897757386867,
+      "rmse": 3.578582048145426,
+      "r2": 0.8743824786388762,
+      "n": 4248
+    },
+    "test": {
+      "mae": 1.2620321961567622,
+      "rmse": 2.7492998582412294,
+      "r2": 0.9299576573084304,
+      "n": 4320
+    }
+  },
+  "random_forest": {
+    "validation": {
+      "mae": 2.535402755033685,
+      "rmse": 4.594964016894029,
+      "r2": 0.7928940903474289,
+      "n": 4248
+    },
+    "test": {
+      "mae": 2.551649439607909,
+      "rmse": 3.869420790869903,
+      "r2": 0.861257867398882,
+      "n": 4320
+    }
+  },
+  "xgboost": {
+    "validation": {
+      "mae": 3.2518992427818745,
+      "rmse": 5.1217875021653025,
+      "r2": 0.742681284978289,
+      "n": 4248
+    },
+    "test": {
+      "mae": 2.539584597086024,
+      "rmse": 3.816655614902171,
+      "r2": 0.8650159691305206,
+      "n": 4320
+    }
+  },
+  "random_forest_top_features": [
+    [
+      "polytropic_head_jkg_s4",
+      0.49911052164519154
+    ],
+    [
+      "polytropic_head_jkg_s3",
+      0.1489898900325544
+    ],
+    [
+      "polytropic_head_jkg_s1",
+      0.0915374904547829
+    ],
+    [
+      "polytropic_head_jkg_s2",
+      0.04640656688786077
+    ],
+    [
+      "sec_kwh_per_t",
+      0.04406125281103142
+    ],
+    [
+      "polytropic_head_jkg_s5",
+      0.036551184650156714
+    ],
+    [
+      "t_s1_disch_c",
+      0.021360225913911665
+    ],
+    [
+      "feed_mode_ethane",
+      0.014975570706198543
+    ],
+    [
+      "brg_de_temp_c_roll_mean_168h",
+      0.014226940582930057
+    ],
+    [
+      "gas_mw",
+      0.011012500779997481
+    ],
+    [
+      "surge_margin_pct_roll_std_168h",
+      0.007419976621060327
+    ],
+    [
+      "run_hours_since_wash",
+      0.006787687156230156
+    ],
+    [
+      "diene_ppm",
+      0.006516525102335234
+    ],
+    [
+      "vib_de_um_roll_mean_168h",
+      0.004580233975410827
+    ],
+    [
+      "run_hours_since_wash_roll_mean_24h",
+      0.004563580992348994
+    ],
+    [
+      "t_s4_disch_c",
+      0.004417921923960067
+    ],
+    [
+      "t_s2_disch_c",
+      0.003006973722846067
+    ],
+    [
+      "run_hours_since_wash_roll_mean_168h",
+      0.0027236417344335246
+    ],
+    [
+      "surge_margin_pct_roll_mean_168h",
+      0.002300973332277719
+    ],
+    [
+      "t_s3_disch_c",
+      0.00228241395738085
+    ]
+  ],
+  "xgboost_top_features": [
+    [
+      "polytropic_head_jkg_s4",
+      0.4574604034423828
+    ],
+    [
+      "polytropic_head_jkg_s3",
+      0.15034255385398865
+    ],
+    [
+      "sec_kwh_per_t",
+      0.09351728856563568
+    ],
+    [
+      "feed_mode_ethane",
+      0.06064215674996376
+    ],
+    [
+      "polytropic_head_jkg_s5",
+      0.05896919220685959
+    ],
+    [
+      "polytropic_head_jkg_s2",
+      0.05045158043503761
+    ],
+    [
+      "polytropic_head_jkg_s1",
+      0.03182779997587204
+    ],
+    [
+      "t_s1_disch_c",
+      0.011953862383961678
+    ],
+    [
+      "t_s4_disch_c",
+      0.010478000156581402
+    ],
+    [
+      "t_s5_disch_c",
+      0.0058057792484760284
+    ],
+    [
+      "discharge_temp_residual_c_s3",
+      0.004744196310639381
+    ],
+    [
+      "run_hours_since_wash_roll_mean_24h",
+      0.00398861663416028
+    ],
+    [
+      "polytropic_eff_observed_s4",
+      0.003541564103215933
+    ],
+    [
+      "polytropic_eff_observed_s3",
+      0.003136109095066786
+    ],
+    [
+      "discharge_temp_residual_c_s5",
+      0.003019041148945689
+    ],
+    [
+      "t_s3_disch_c",
+      0.0030075053218752146
+    ],
+    [
+      "brg_de_temp_c_roll_mean_168h",
+      0.0029192056972533464
+    ],
+    [
+      "feed_mode_mixed",
+      0.0025840518064796925
+    ],
+    [
+      "polytropic_eff_observed_s5",
+      0.002476657973602414
+    ],
+    [
+      "vib_de_um_roll_mean_24h",
+      0.0023962808772921562
+    ]
+  ]
+}

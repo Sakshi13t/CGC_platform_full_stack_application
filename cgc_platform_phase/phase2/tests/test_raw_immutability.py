@@ -15,7 +15,9 @@ def _sha256(path: Path) -> str:
 
 
 def test_raw_files_byte_for_byte_unchanged(raw_checksums_before):
-    repo_root = Path(__file__).resolve().parents[1]
+    # dataset/ lives at the true git-repo root, three levels above phase2/
+    # (tests -> phase2 -> cgc_platform_phase -> repo root).
+    repo_root = Path(__file__).resolve().parents[3]
     for rel_path, expected_digest in raw_checksums_before.items():
         actual_digest = _sha256(repo_root / rel_path)
         assert actual_digest == expected_digest, f"{rel_path} has been modified since Phase 1!"
@@ -24,7 +26,7 @@ def test_raw_files_byte_for_byte_unchanged(raw_checksums_before):
 def test_pipeline_run_does_not_modify_raw_files(raw_checksums_before, pipeline_results):
     """Running the full pipeline (which already executed via the
     `pipeline_results` fixture) must not have touched the raw CSVs."""
-    repo_root = Path(__file__).resolve().parents[1]
+    repo_root = Path(__file__).resolve().parents[3]
     for rel_path, expected_digest in raw_checksums_before.items():
         actual_digest = _sha256(repo_root / rel_path)
         assert actual_digest == expected_digest, f"Pipeline run modified {rel_path}!"
