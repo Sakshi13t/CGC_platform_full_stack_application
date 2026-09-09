@@ -1,0 +1,7 @@
+PASS: no *_true columns in feature list
+PASS: no events.csv label/text columns in feature list
+PASS: p_s1_suct_bara excluded from feature list
+PASS: 'unit' excluded from feature list
+PASS: known shutdown window fully flagged is_shutdown
+PASS: known throughput sensor-fault window fully flagged BAD_SENSOR
+PASS: split assignment is chronological (non-overlapping ranges)

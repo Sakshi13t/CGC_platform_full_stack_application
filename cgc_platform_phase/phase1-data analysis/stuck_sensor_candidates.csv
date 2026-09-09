@@ -1,0 +1,4 @@
+train_id,column,max_consecutive_identical_hours,value,start_ts,end_ts
+CGC-100A,p_s1_suct_bara,17520,1.32,2024-01-01,2025-12-30 23:00:00
+CGC-200B,p_s1_suct_bara,14160,1.28,2024-01-01,2025-08-12 23:00:00
+CGC-200B,throughput_tph,432,243.85,2024-04-30,2024-05-17 23:00:00
